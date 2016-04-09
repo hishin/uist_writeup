@@ -1,0 +1,11 @@
+\section{Introduction}
+Audio narratives are a common form of communication used in podcasts, radio programs, audio books and e-learning. Closest to everyday conversation, audio is a medium with relatively low barriers to entry. So, it is used by many laymen who are not professional producers or writers to publicize their stories.
+
+A common workflow for creating audio stories involve three main steps: writing a script, recording audio and editing audio. To create a compelling audio story, producers usually go through several iterations of these steps. 
+
+Most existing audio editing systems provide functionalities necessary to support the latter two steps: recording and editing audio. However, the first step, writing a script, is usually overlooked or treated as completely separate. This is the case even when scripts play a key role recording and editing speech.  
+
+Moreover, traditional tools provide many features that are useful for manipulating audio waveforms, but that are not directly relevant for creating audio stories. Their complex user interface can be a overwhelming for novice users. 
+
+In this paper, we present a interface that supports and links all three steps of the aforementioned workflow. Our system addresses challenges that span the process of creating audio narratives, from (1) associating script with audio recordings, (2) managing multiple takes of recordings, and (3) iterating between editing and recording. Our interface is inspired from familiar document editors and text merge tools, which are easy to learn.
+
