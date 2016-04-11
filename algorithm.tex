@@ -1,2 +1,10 @@
 \section{Algorithmic Methods}
 \label{sec:algorithms}
+\subsection{Transcribing the audio recording}
+We use the IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim transcript of each audio take in real time. The service produces a time stamp for each word indicating its start and end time. It also segments the transcript into \textit{utterances} where each utterance is separated by a longer silent gap in the speech (longer than 500 ms). While automatic speech recognition is imperfect, we have found that the results were accurate enough for the purpose of alignment (next section) and for understanding the transcript.
+  
+\subsection{Aligning the transcript to the master script}
+Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two documents. 
+
+\subsection{Co-segmenting the transcript and the master script}
+
