@@ -5,15 +5,14 @@ In Figure~\ref{masterscript}, the user begins by writing on the master script an
 word document or script. 
 
 Once the user starts recording, the audio is transcribed in real time and a verbatim text corresponding to each take appears in a separate transcript document tab. Each transcript is time-aligned with the corresponding recording, so that users can quickly navigate to specific
-part of the audio by clicking on a word in the transcript.
-
-If the \textit{compare-view} is turned on, our system aligns segments of the transcript to corresponding segments in the master script, in this case the points in the original outline.
+part of the audio by clicking on a word in the transcript. If the \textit{compare-view} is turned on, our system aligns segments of the transcript to corresponding segments in the master script, in this case the points in the original outline (Figure~\ref{compare-view}).
 
 % partitions the transcript and the master script into short segments, and aligns them to each other. The boundaries of these segments are computed by taking into account, along with other factors,  pauses in the audio, such that when different audio segments corresponding to the transcript segments are joined together the cut is seamless.
 
-When the user has multiple takes, in addition to each of the transcripts, the \textit{all-tab} provides a summary of all of the takes (Figure~\ref{all-tab}). As in the \textit{compare-view}, for each segment in the master script, it displays the corresponding transcript segments, this time from all of the audio takes. A drop-down button indicates that there are multiple versions (or takes of the same segment. Clicking on the button opens a
-list showing the alternatives versions from different takes (Figure ~\ref{alternate-view}). The user can listen to any of these takes and select one without having to search through individual takes. 
+When the user has multiple takes, in addition to each of the transcripts, the \textit{all-tab} provides a summary of all of the takes. As in the \textit{compare-view}, for each segment in the master script, it displays corresponding transcript segments, this time from all of the audio takes. A drop-down button indicates that there are multiple versions (or takes) of the same segment. Clicking on the button opens a
+list showing the alternative versions from different takes (Figure ~\ref{alternate-view}). The user can listen to any of these takes and select one without having to search through individual takes. If none of the recordings contains a part corresponding to a segment in the master script, it is highlighted in red. In this way, the user can easily keep track of what has been recorded, and what still needs to be recorded.  
 
-Now that part appears in text color to indicate. If the user has multiple takes, they can go back and forth. If they go to the All Tab, they can see multiple takes of each sentence.
+The user can \textit{accept} audio segments into the final track by clicking on a button next to each transcript segment either from the individual transcript tab or the all-tab. The corresponding transcript is copied and replaces the aligned segment in the master script. The text of this segment in the master script now appears in darker color to indicate that it has been recorded. 
+
 Also edit the master script, just as they would edit a text document. If the user edits a recorded portion of the script, the relevant section is makred as dirty to indicate that it should be re-recorded.
 
