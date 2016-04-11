@@ -1,26 +1,13 @@
 \section{User Interface}
-Motivated by these insights, we developed the \systemname\  interface to support iterative script writing and  audio recording/editing. As shown in Figure~\ref{interface}, our interface
-consists of two types of documents: a \textit{Master Script} document (left) shows the current status of the final track (i.e. what has been recorded) on top of the script (i.e. what was planned to be recorded), while a \textit{Transcript} document (right) displays the verbatim transcript of individual audio takes. When the user records a new take, the system analyzes its  is analyzed and aligned with the current master script. 
+Motivated by these insights, we developed the \systemname\  interface to support iterative script writing and  audio recording/editing. As shown in Figure~\ref{interface}, our interface consists of two types of documents: a \textit{Master Script} document (left) links the final track (i.e. what has been recorded) to the script (i.e. what was planned to be recorded), while a \textit{Transcript} document (right) displays the verbatim transcript of individual audio takes. As the user records new takes, our tool aligns the audio transcripts to the master script so that it is easy to compare each take with the master script and with each other. It also cuts each recording into segments that can be seamlessly merged between takes. At any point during the recording process, the user can edit the script or the final track by editing the master script like a text document. The rest of the section describes the interface using an example workflow. 
 
-As the user records new takes, \systemname\ timealigns
-the recording with the \textit {Master Script}. 
+In figure~\ref{masterscript}, the user begins by writing on the master script an outline  of points to record. The text appears in light grey to indicate that these parts have not been recorded yet. At this stage, the master script is like an ordinary
+word document or script. 
 
-%  When the
-% user stops recording, the interface provides feedback for
-% each recorded take based on the four high-level narration
-% guidelines. Narration Coach also resynthesizes the recorded
-% speech to automatically improve it. Users can incorporate the
-% resynthesized version in their final narration, or use it as a
-% suggestion of how to improve their narration. In our system,
-% we call a sentence in the script text a line, and we call an
-% audio recording of one line a take of that line.
+Once the users start recording, the audio is transcribed in real time and a verbatim text corresponding to each take appears in a separate transcript document tab. Each transcript is also time-aligned with the corresponding recording, so that edits made to the text are reflected in the audio. Users can quickly navigate to specific part of the audio by clicking on a word in the transcript. 
 
-We first describe our interface through an example workflow, and then present the main algorithms used in our system in the \ref{sec:algorithms} section.\\
- Our system displays two types of documents: the master-script and transcripts. The \textit{master-script}, representing the current audio narrative, is the document that users work on. Users start by writing on the master-script what they plan to
-record. At this stage, the master-script is like an ordinary
-word document or script. Once the users start recording, the text corresponding to each take appears in a separate \textit{transcript} document tab.\\
-If the \textit{aligned-view} is turned on, the master-script and the currently selected transcript is segmented.
+If the \textit{compare-view} is turned on, our system cuts the transcript into segments, and aligns it to the master script. Each segment .  The user can \textit{accept} a segment into the final track by . 
 
-The user can click on a button to use that segment of the audio. Now that part appears in text color to indicate. If the user has multiple takes, they can go back and forth. If they go to the All Tab, they can see multiple takes of each sentence.
+Now that part appears in text color to indicate. If the user has multiple takes, they can go back and forth. If they go to the All Tab, they can see multiple takes of each sentence.
 Also edit the master script, just as they would edit a text document. If the user edits a recorded portion of the script, the relevant section is makred as dirty to indicate that it should be re-recorded.
 
