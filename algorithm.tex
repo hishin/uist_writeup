@@ -3,8 +3,11 @@
 \subsection{Transcribing the audio recording}
 We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim transcript of each audio take in real time. The service produces a time stamp for each word indicating its start and end time. It also segments the transcript into \textit{utterances} where each utterance is separated by a longer silent gap in the speech (longer than 500 ms). While automatic speech recognition is imperfect, we have found that the results were accurate enough for the purpose of alignment (next section) and for understanding the transcript.
   
-\subsection{Aligning the transcript to the master script}
-Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two documents. 
+\subsection{Co-segmenting and aligning the transcript to the master script}
+Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two documents for example, due to loose scripts, or inaccurate reading or transcription.
 
-\subsection{Co-segmenting the transcript and the master script}
+In order to display corresponding parts in the master script and the transcript side-by-side, we need to also segment the the two texts. Ideally, these segments will satisfy several conditions:  (1) In the case of typed, unrecorded text, these correspond to punctuations such as periods, commas or line breaks, whereas in recorded text, these correspond to longer pauses in the speech. 
 
+
+\subsection{All tab view ?}
+\subsection{Text edit markup ?}
