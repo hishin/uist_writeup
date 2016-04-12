@@ -13,6 +13,7 @@ Ideally, our segments would respect natural boundaries such as sentence punctuat
 We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
 
 \textbf{Iterative co-segmentation}
+The segmentation of the master-script depends on the segmentation of the transcript and vice versa. We propose an iterative approach, where the algorithm alternates between optimally segmenting the master-script and the transcript independently. We initialize the segment boundaries at punctuations [.!?:;] in the unrecorded text and longer silent gaps ($>$\ 500ms)\ in the recorded text. For each optimization step, we use the classic optimal line-breaking algorithm by Knuth and Plass \cite{} with our own custom scoring function. In practice, we found that two iterations were sufficient to converge to a solution. 
 
 \textbf{Scoring function}
 
