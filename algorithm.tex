@@ -37,7 +37,7 @@ scoring function that evaluates the goodness of candidate text segments. We defi
 based on three terms: 
 \begin{enumerate}
 \item{\textit{Punctuation and silent gaps}: We prefer segment boundaries after sentence punctuations, and in case of recorded text, where there is a longer silence gap. Placing cuts at silent gaps allows audio segments from different takes or different parts of a single take to be joined seamlessly. \VTODO{Give precise formula.}   }
-\item{\textit{Global alignment}: \VTODO{In global alignment computed with NW, some words don't have match, some do. We use this info to separate improvised vs planned.}}
+\item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word in the text, NW outputs whether it has a match in the other text. We prefer text segments that have the proportion of matching words close to 0 or 1.  \VTODO{Give precise formula.}}
 \item{\textit{Consistency with the other text}: \VTODO{Since the end goal is to align the two texts, segments from each text should coincide.}} 
 \end{enumerate}
 
