@@ -1,30 +1,36 @@
 \section{Informal User Evaluation}
 \VTODO{Table of usage statistics from both studies.}
 
-To gauge the utility of our interface, we conducted an informal evaluation with two users (U1 and U2). We started each session with a 10-minute demonstration of interface. Then, we gave them a short article about a technical subject and asked them to create an explanatory audio recording using our authoring interface. They were allowed to go back to the article during the authoring process or to take notes on the master-script, but they were discouraged from recording the article by reading it out loud. We examined their workflow, and the number/type of features they used. We also solicited written qualitative feedback about our interface at the end of the session. Each session lasted about 40 minutes.
+To gauge the utility of our interface, we conducted an informal evaluation with two users (U1 and U2). We started each session with a 10-minute demonstration of our interface. We gave them a short article about a technical subject and asked them to create an explanatory audio recording using our authoring interface. Users were allowed to go back to the article during the authoring process or to take notes on the master-script, but they were discouraged from recording the article by reading it out loud. We examined their workflow, and the number/type of features they used. We also solicited written qualitative feedback about the authoring experience at the end of the session. Each session lasted about 40 minutes.
 
 U1 created a recording about the article \textit{What is a decibel? } from howstuffworks.com \cite{}, and U2 created a recording about \textit{How lasers work} from David Macaulay's illustrated book, \textit{The Way Things Work} \cite{}. Overall, the results from the study were extremely encouraging. Both users successfully produced a complete audio recording summarizing the articles, taking advantage of many of our interface features (Table~\ref{}). 
 
-Interestingly, each user adapted a very different workflow. U1 started by writing a complete outline as a list of main ideas. For each take, U1 recorded a few points in the outline, merged them into the master-script then continued to record the next point on a separate take. After merging in all of the points in the final track, U1 noticed a mistake in one of the examples (instead of saying \textit{140 decibels}, U1 had said \textit{40} decibels). U1 corrected the corresponding recorded text in the master-script which was consequently marked red. U1 re-recorded and replaced this part by reading out the edited master-script. On the other hand, U2 wrote part of the outline, recorded that portion, and moved onto write the outline of the next part. The different workflow could be due to personal preference, or  to the fact that U2's article was organized into a clear step-by-step explanation whereas U1's article was flowed like a continuous narrative. In either case, our interface was able support both users' workflow. 
+Interestingly, each user adapted a very different workflow. U1 started by writing a complete outline as a list of main ideas. For each take, U1 recorded a few points in the outline, merged them into the master-script then continued to record the next point on a separate take. On the other hand, U2 wrote part of the outline, recorded that portion, and moved on to write the outline of the next part. The different workflows could be due to personal preference, or  to the fact that U2's article was organized into a clear step-by-step explanation whereas U1's article flowed like a continuous narrative. In either case, our interface was able support both users' workflow. 
 
-?
+Both users took advantage of the master-script to go back and forth between scripting and audio recording. After recording and merging in all the points
+to the final track, U1 noticed a mistake in one of the examples
+(instead of saying \textit{140 decibels}, U1 had said \textit{40}
+decibels). U1 corrected the corresponding recorded text in the
+master-script, which was consequently marked red. U1 re-recorded
+and replaced this part by reading out the edited master-script.
+U2 wrote a very rough outline for the first part of the article. Then U2 used the transcript of the first take to refine the script, and recorded a second take. For the second part of the article, U2 wrote a much more detailed script beforehand. U2 noted,  \textit{``For the introduction, I had a pretty good idea of what I wanted to say, so it saved me time to use only bullet points. (For the second part) I wrote full sentences, as I was not familiar with all the technical details and it would have been more difficult
+to improvise. I enjoyed being able to use the master-script in both ways.''
+}
 
-Both users also offered strong positive feedback about our authoring
-interface. They were most enthusiastic about the integration
+
+Both users offered strong positive feedback about our authoring
+interface, and said they would use it for creating speech recordings. They were most enthusiastic about the integration
 of the script and the final track in the master-script view,
 and the ability to align the master-script to the transcripts.
-U2 wrote, \textit{``Writing the outline on the UI and having
+U2 wrote, \textit{``Writing the outline on the same interface and having
 that integrated with the audio was most helpful.''}  U1 said
 that the alignment, \textit{``helped to keep track of what pieces
 of information was already recorded and which ones were still
 needed.''} Participants were also impressed with the quality
 of the merged recording. U1 wrote, \textit{``I was surprised
 how the final recording from the multiple takes was seamless.''}  
-\VTODO{Explain U1 workflow, U2 workflow}
 
-\VTODO{Qualitative feedback}
-
-
+\section{Comparative study}
 We also conducted a pilot study to compare our interface with a state-of-the-art transcript-based speech editing interface \cite{rubin2013content}. \VTODO{Briefly explain Steve Rubin's interface.} We recruited four participants, none of whom had experience using text-based audio editing systems. We gave them a script with bullet points outlining a mini lecture on a science subject (e.g. \textit{gravity} and \textit{dark matter}) and two audio takes roughly corresponding to that script. Their task was to cut and merge the two takes to produce a recording that contained all the contents listed in the script and only those contents. The two takes were similar, but both takes had some
 missing content from the outline and one had some extra
 content. So, the participants had to choose parts from each take and combine them to get the final result. We encouraged the users to focus on having the complete content, rather than the details of the audio quality (e.g. tempo, diction, flow of speech etc.). 
