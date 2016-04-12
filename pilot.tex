@@ -1,8 +1,7 @@
 \section{Comparative study}
 We also conducted a pilot study to compare our interface with
 a state-of-the-art transcript-based speech editing interface
-\cite{rubin2013content}. \VTODO{Briefly explain Steve Rubin's
-interface.} We recruited four participants, none of whom had
+\cite{rubin2013content}. We recruited four participants, none of whom had
 experience using text-based audio editing systems. We gave them
 a script with bullet points outlining a mini lecture on a science
 subject (e.g. \textit{gravity} and \textit{dark matter}) and
@@ -13,27 +12,36 @@ contents. The two takes were similar, but both takes had some
 missing content from the outline and one had some extra
 content. So, the participants had to choose parts from each take
 and combine them to get the final result. We encouraged the users
-to focus on having the complete content, rather than the details
+to focus on having the complete content rather than the details
 of the audio quality (e.g. tempo, diction, flow of speech etc.).
 
+In Rubin et al.'s system (referred to as
+\textit{Interface-R} hereafter), as in our interface, users
+can edit the transcript like a text document using operations
+such as copy-and-paste, insert or delete, and the edits are propagated
+to the audio. The system  also detects alternate takes of the
+same sentence and groups them for users to select between them.
+However, unlike \systemname , Interface-R is geared for editing pre-recorded
+audio, and does not support scripting or real-time recording.
+In fact, it only allows editing one recording at a time. To simulate multiple takes, we took advantage of their multi-column interface, so that each take appeared in a separate column one after the other as if they were spoken by two different speakers. In \systemname,  the script was contained in the master-script, whereas in Interface-R, we gave users a hardcopy of the script.
 
 Each participant completed the task twice with different outlines,
-once using our interface and the other using Rubin et al.'s interface.
+once using our interface and the other using Interface-R.
 The subject of the outline and the order of the interface was
-counter-balanced. We examined the time time they spent editing,
+counter-balanced. We examined the time they spent editing,
 the number/type of functions they used, and the quality of the
-final recording. After the session, participants gave written
+final recording (Table~\ref{}). After the session, participants gave written
 qualitative feedback about the two interfaces. In total, each
-session lasted one hour.
+session lasted 1 hour.
    
-Each of the four participants preferred \systemname\ over Rubin
-et al.'s interface for the given task, and noted they would use
+Each of the four participants preferred \systemname\ over Interface-R for the given task, and noted they would use
 our interface to edit audio recordings. Every participant also
-completed the task faster using our interface (avg. 7.4 $\pm$
-1.6 min) than Rubin et al's interface(9.9 $\pm$ 1.5 min). Table~\ref{evalsumary2}
-summarizes the participants' usage of \systemname\ during the
-editing session.
+completed the task faster using our interface (7.4 vs 9.9 min Interface-R). 
 
 \VTODO{Explain usage}
 
-\VTODO{Positive Feedback}
+All of the participants commented on how the master-script helped them in the task. One person noted that in \systemname\ \textit{``the master-script linked the two takes into one comprehensive view
+that made the editing a lot simpler, [while in Interface-R] I felt like I had to consider two separate documents and combine them manually.''} Another person preferred the \systemname\ interface for the task of editing the audio content, and commented that Interface-R would be useful to make detailed edits to the speech flow. 3 out of the 4 participants also found the color-coded visualization of the master-script (recorded vs. unrecorded) and the transcript (planned vs. improvised) very helpful. A participant wrote about the \textit{compare-view} feature that \textit{``The alignment was great. I felt like almost half of my work was
+already completed before I began.''} 
+
+
