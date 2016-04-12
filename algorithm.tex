@@ -49,14 +49,26 @@ based on three terms:
 
 where $t_{gap}(w)$ is the silence gap in seconds after a recorded word, $w$, and is equal to 1.0 for $w$ is at the end of the recording. }
 
-\item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word $w_i$ in one text ($T$) NW outputs a mapping ( $M_{TT'}$) 
+\item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word $w_i$ in one text ($T$) NW outputs a mapping ($M_{TT'}$) 
 to the other text ($T'$), and vice versa. For instance, $M_{TT'} = \{m_0, \dots,m_n\}$ where $m_i$ is the index of the word in  $T'$ that matches $w_i$. $m_i < 0$ if the word has no match. We prefer text segments that have the proportion of matching words close to 0 or 1. The alignment score ($e_a$) for a single text segment $T_{ji}$ is:  
 \begin{equation}
 e_{a}(T_{ji}) = 2\times\bigg|\sum_{n=j+1}^{i}{match(w_n)}\big/(i-j) - 1/2 \bigg|
 \end{equation}
 where $match(w_i)$ is 1 or 0, depending on whether $m_i > 0$ or not (whether the word has a match or not).
 }
-\item{\textit{Consistency with the other text}: Since the end goal is to align the segments from both texts, we would like the segment boundaries from one text to align with the segment boundaries in the other text. Along with the binary match output, NW also a mapping between the . \VTODO{Given a segmentation of one text, we define the consistency score of the other text as follows: }} 
+\item{\textit{Consistency with the other text}: Since the end goal is to align the segments from both texts, we would like the segment boundaries from one text to align with the segment boundaries in the other text. Let $S' = \{s'_0, \dots, s'_n\}$ be the segmentation of text $T'$, where $s'_i$ is the index of the segment that word $w'_i$ belongs to. Given this segmentation and the mapping of $T$ to $T'$ from NW  ($M_{TT'}$), the consistency score ($e_c$) for a text segment $T_{ji}$ is:
+\begin{equation}
+    e_c(T_{ji})= 
+\begin{cases}
+   1.0, \text{ if } s'_{m_i} \neq s'_{m_k} \text{ for the smallest } k>i, m_k \n>0\\
+   -1.0 \text{ otherwise }
+\end{cases}
+\end{equation}
+
+$s'_{m_i}$ is the index of the segment which $w'_{m_i}$ belongs to and likewise for $s'_{m_k}$, where $w'_{m_k}$ is the closest word after $w'_{m_i}$ that has a match in $T$.
+} 
+
+
 \end{enumerate}
 
 
