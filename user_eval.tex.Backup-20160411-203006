@@ -1,5 +1,6 @@
 \section{Informal User Evaluation}
-To gauge the utility of our interface, we conducted an informal evaluation with two users (U1 and U2). We started each session with a brief demonstration of our interface, and then asked the participants to create an audio recording. We examined their workflow, and the number/type of features they used. We also solicited written qualitative feedback about our interface at the end of the session. Each session lasted about 50 minutes.
+\VTODO{One more user, collaborative}
+To gauge the utility of our interface, we conducted an informal evaluation with two users. We started each session with a brief demonstration of our interface, and then asked the participants to create an audio recording. We examined their workflow, and the number/type of features they used. We also solicited written qualitative feedback about our interface at the end of the session. Each session lasted about 50 minutes.
 
 
 We also conducted a pilot study to compare our interface with a state-of-the-art transcript-based speech editing interface \cite{rubin2013content}. We recruited four participants, none of whom had experience using text-based audio editing systems. We gave them a script with bullet points outlining a mini lecture on a science subject (e.g. \textit{gravity} and \textit{dark matter}) and two audio takes roughly corresponding to that script. Their task was to cut and merge the two takes to produce a recording that contained all the contents listed in the script and only those contents. The two takes were similar, but both takes had some
