@@ -49,13 +49,14 @@ based on three terms:
 
 where $t_{gap}(w)$ is the silence gap in seconds after a recorded word, $w$, and is equal to 1.0 for $w$ is at the end of the recording. }
 
-\item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word in the text, NW outputs whether it has a match in the other text. We prefer text segments that have the proportion of matching words close to 0 or 1. The alignment score ($e_a$) for a single text segment $T_{ji}$ is:  
+\item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word $w_i$ in one text ($T$) NW outputs a mapping ( $M_{TT'}$) 
+to the other text ($T'$), and vice versa. For instance, $M_{TT'} = \{m_0, \dots,m_n\}$ where $m_i$ is the index of the word in  $T'$ that matches $w_i$. $m_i < 0$ if the word has no match. We prefer text segments that have the proportion of matching words close to 0 or 1. The alignment score ($e_a$) for a single text segment $T_{ji}$ is:  
 \begin{equation}
 e_{a}(T_{ji}) = 2\times\bigg|\sum_{n=j+1}^{i}{match(w_n)}\big/(i-j) - 1/2 \bigg|
 \end{equation}
-where $match(w)$ is 1 or 0, depending on whether it has a match in the NW output or not.
+where $match(w_i)$ is 1 or 0, depending on whether $m_i > 0$ or not (whether the word has a match or not).
 }
-\item{\textit{Consistency with the other text}: Since the end goal is to align the segments from both texts, we would like the segment boundaries from one text to align with the segment boundaries in the other text. \VTODO{Given a segmentation of one text, we define the consistency score of the other text as follows: }} 
+\item{\textit{Consistency with the other text}: Since the end goal is to align the segments from both texts, we would like the segment boundaries from one text to align with the segment boundaries in the other text. Along with the binary match output, NW also a mapping between the . \VTODO{Given a segmentation of one text, we define the consistency score of the other text as follows: }} 
 \end{enumerate}
 
 
