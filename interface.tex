@@ -13,11 +13,11 @@ with the audio.
 \subsection{Interface and Usage Scenario}
 The rest of the section describes the interface using an example scenario of how a user might create an audio recording from the beginning. 
 
-In Figure~\ref{masterscript}, the user begins by writing on the master-script an outline  of points to record. The text appears in light grey to indicate that these parts have not been recorded yet. At this stage, the master-script is like an ordinary
+In Figure~\ref{masterscript}\VTODO{capture of interface with outline in master script}, the user begins by writing on the master-script an outline  of points to record. The text appears in light grey to indicate that these parts have not been recorded yet. At this stage, the master-script is like an ordinary
 word document or script. 
 
 Once the user starts recording, the audio is transcribed in real time and a verbatim text corresponding to each take appears in a separate transcript document tab. Each transcript is time-aligned with the corresponding recording, so the user can quickly navigate to specific
-part of the audio by clicking on a word in the transcript. \VTODO{Explain track change view.} If the \textit{compare-view} is turned on, our system aligns segments of the transcript to corresponding segments in the master-script, (in this case the points in the original outline), and shows them side-by-side (Figure~\ref{compare-view}). A segment in the transcript that does not correspond to any part of the master-script (e.g. where the speaker improvised)is highlighted in yellow.
+part of the audio by clicking on a word in the transcript. \VTODO{Explain track change view.} If the \textit{compare-view} is turned on, our system aligns segments of the transcript to corresponding segments in the master-script, (in this case the points in the original outline), and shows them side-by-side (Figure~\ref{compare-view})\VTODO{capture of aligned view}. A segment in the transcript that does not correspond to any part of the master-script (e.g. where the speaker improvised)is highlighted in yellow.
 
 % partitions the transcript and the master script into short segments, and aligns them to each other. The boundaries of these segments are computed by taking into account, along with other factors,  pauses in the audio, such that when different audio segments corresponding to the transcript segments are joined together the cut is seamless.
 
@@ -30,7 +30,7 @@ The text of the accepted segment appears in
 darker color in the master-script to indicate that it has been recorded. 
 
 After the user records multiple takes, in addition to each of the transcripts, the \textit{all tab} provides a summary of all of the takes. For each segment in the master script, it displays corresponding transcript segments, this time from all of the audio takes. A drop-down button next to a transcript segment  indicates that there are multiple versions (or takes)  of the  segment. Clicking on the button opens a
-list showing the alternative versions (Figure ~\ref{alternate-view}). The user can listen to any of these takes and select one without having to search through individual takes. 
+list showing the alternative versions (Figure ~\ref{alternate-view})\VTODO{capture of dropdown showing alternate takes}. The user can listen to any of these takes and select one without having to search through individual takes. 
 
 If a part of the master-script has not been recorded in any of the takes, it is highlighted in red. In this way, the user can easily keep track of what has been already recorded, and what still needs to be recorded. After recording and accepting segments to the final track, the master-script contains both recorded and unrecorded text.
 The final track includes only the darker, recorded text. 
