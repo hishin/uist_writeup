@@ -1,13 +1,24 @@
 \section{Algorithmic Methods}
 \label{sec:algorithms}
+Our authoring interface relies on audio transcription and text alignment algorithms to link the master-script to the audio recordings.  
+
 \subsection{Transcribing the audio recording}
-We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim transcript of each audio take in real time. The service produces a time stamp for each word indicating its start and end time. It also segments the transcript into \textit{utterances} where each utterance is separated by a longer silent gap in the speech (longer than 500 ms). While automatic speech recognition is imperfect, we have found that the results were accurate enough for the purpose of alignment (next section) and for understanding the transcript.
+We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim transcript of each audio recording in real-time. The service outputs a time stamp for each word indicating its start and end time within the audio. It also segments the transcript into \textit{utterances} where each utterance is separated by a longer silent gap in the speech (longer than 500 ms). While automatic speech recognition is imperfect, we have found that the results were accurate enough for the purpose of alignment (below) and for users to understand the transcript. Users can also have the option of correcting transcription errors without altering the underlying audio.
   
-\subsection{Co-segmenting and aligning the transcript to the master script}
-Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two documents for example, due to loose scripts, or inaccurate reading or transcription.
+\subsection{Aligning the transcript to the master-script}
+Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two texts for example, due to loose scripts, or inaccurate speech or transcription.
 
-In order to display corresponding parts in the master script and the transcript side-by-side, we need to also segment the the two texts. Ideally, these segments will satisfy several conditions:  (1) In the case of typed, unrecorded text, these correspond to punctuations such as periods, commas or line breaks, whereas in recorded text, these correspond to longer pauses in the speech. 
+In order to display corresponding parts in the master-script and the transcript side-by-side, we need to also partition the the two texts into comparable segments. For example, text differencing and merging tools usually treat each line of text as a single segment.
+Ideally, our segments would respect natural boundaries such as sentence punctuations, line breaks and pauses in the audio. We would also like to separate parts of the transcript that agrees with the master-script (i.e. planned speech) from parts that do not (i.e. improvised speech).  
+We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
+
+\textbf{Iterative co-segmentation}
+
+\textbf{Scoring function}
 
 
-\subsection{All tab view ?}
-\subsection{Text edit markup ?}
+
+
+
+
+
