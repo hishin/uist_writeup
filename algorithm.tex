@@ -13,7 +13,7 @@ Ideally, our segments would respect natural boundaries such as sentence punctuat
 We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
 
 \textbf{Iterative co-segmentation}
-The segmentation of the master-script depends on the segmentation of the transcript and vice versa. We propose an iterative approach, where the algorithm alternates between optimally segmenting the master-script and the transcript independently using the result from one to segment the other. We initialize the segment boundaries at punctuations [.!?:;] in the unrecorded text and longer silent gaps ($>$\ 500ms)\ in the recorded text. In practice, we
+The segmentation of the master-script depends on the segmentation of the transcript and vice versa. We propose an iterative approach, where the algorithm alternates between optimally segmenting the master-script and the transcript independently using the result from one to segment the other. We initialize the segment boundaries at punctuations (.!?:;) in the unrecorded text and longer silent gaps ($>$\ 500ms)\ in the recorded text. In practice, we
 found that two iterations were sufficient to converge to a solution.
 
 
@@ -33,12 +33,23 @@ optimal set of segments for the entire text.
 
 \textbf{Scoring function}
 The dynamic programming algorithm described above requires a
-scoring function that evaluates the goodness of candidate text segments. We define this scoring function
+scoring function ($E$) that evaluates the goodness of candidate text segments. We define this scoring function
 based on three terms: 
 \begin{enumerate}
-\item{\textit{Punctuation and silent gaps}: We prefer segment boundaries after sentence punctuations, and in case of recorded text, where there is a longer silence gap. Placing cuts at silent gaps allows audio segments from different takes or different parts of a single take to be joined seamlessly. \VTODO{Give precise formula.}   }
+\item{\textit{Punctuation and silent gaps}: We prefer segment boundaries after sentence punctuations, and in case of recorded text, where there is a longer silence gap. Placing cuts at silent gaps allows audio segments from different takes or different parts of a single take to be joined seamlessly. More precisely, we define the goodness score for a single text segment $T_{ji} = \{w_\text{j+1}
+\dots,w_\text{i}\}$ as: \\
+\[
+    e(T_{ji})= 
+\begin{cases}
+   1.0, \text{ if } w_i \text{ is unrecorded w punctuation (.!?:;)}\\
+   -1.0 \text{ if } w_i \text{ is unrecorded w/o punctuation}\\
+   t_{gap}(w_{i}) \text{ if } w_i \text{ is recorded} 
+\end{cases}
+\]
+where $t_{gap}(w)$ is the silence gap in seconds after a recorded word, $w$, and is equal to 1.0 for $w$ is at the end of the recording. }
+
 \item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. not recorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word in the text, NW outputs whether it has a match in the other text. We prefer text segments that have the proportion of matching words close to 0 or 1.  \VTODO{Give precise formula.}}
-\item{\textit{Consistency with the other text}: \VTODO{Since the end goal is to align the two texts, segments from each text should coincide.}} 
+\item{\textit{Consistency with the other text}: Since the end goal is to align the segments from both texts, we would like the segment boundaries from one text to align with the segment boundaries in the other text. \VTODO{Given a segmentation of one text, we define the consistency score of the other text as follows: }} 
 \end{enumerate}
 
 
