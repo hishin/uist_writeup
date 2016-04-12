@@ -67,10 +67,16 @@ where $match(w_i)$ is 1 or 0, depending on whether $m_i > 0$ or not (whether the
 
 $s'_{m_i}$ is the index of the segment which $w'_{m_i}$ belongs to and likewise for $s'_{m_k}$, where $w'_{m_k}$ is the closest word after $w'_{m_i}$ that has a match in $T$.
 } 
-
-
 \end{enumerate}
 
+We combine these terms into a single scoring function $e$ as follows. 
+\begin{equation}
+e(T_{ji}) = e_a(T_{ji}) + e_b(T_{ji}) + 0.5  e_c(T_{ji})
+\end{equation}
+The goodness score for a set of text segments $S$ is:
+\begin{equation}
+E(S) = \sum_{T_{ji}\in S}{e(T_{ji})} - \big|S\big|
+\end{equation}
+where $\big|S\big|$ is the number of segments and is a regularization term. 
 
-
-
+The final output of our algorithm is a segmentation of the two texts from the master-script and the transcript. We use this output in the \textit{compare view} to display the aligned segments side-by-side, and to accept into master-script.
