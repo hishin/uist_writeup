@@ -1,4 +1,33 @@
 \section{Comparative study}
+\begin{table}[t]
+\center
+\tabcolsep3pt
+\begin{tabular}{c|cccccc}
+\multicolumn{7}{c}{\textbf{Audio Editing Session}}\\\hline
+{User}&\multicolumn{2}{c}{Time spent}& {Total} & {Accept}
+&{View}&{Text} \\
+{}&\multicolumn{2}{c}{ours \textit{(Rubin)}}&{cuts}&{\textit{ind
+/ all}}&{alternate}&{edit}
+\\\hline
+\textit{A}&\multicolumn{2}{c}{08:10 \textit{(5:58)}}&{3}& {4
+/ 3}&{-}&{2}\\
+\textit{B}  &\multicolumn{2}{c}{11:10 \textit{(6:40)}}&{3}&{3
+/ 4}&{-}&{1}\\
+\textit{C}&\multicolumn{2}{c}{11:05 \textit{(9:37)}}&{2}& {7
+/ -}&{1}&{7}\\
+\textit{D}&\multicolumn{2}{c}{09:10 \textit{(7:25)}}&{6}& {10
+/ 1}&{3}&{-}
+\\\hline
+\end{tabular} 
+\label{tab:editing}
+\caption{Four participants created audio
+recordings from two pre-recored takes, using our interface and
+Rubin et al's interface. Usage statistics pertain to our interface.
+Accept \textit{ind / all} are number of segments accepted from
+the individual transcript view and the \textit{all-tab} view
+respectively.}
+\end{table} 
+
 We also conducted a pilot study to compare our interface with
 a state-of-the-art transcript-based speech editing interface
 \cite{rubin2013content}. We recruited four participants, none of whom had
@@ -30,18 +59,19 @@ once using our interface and the other using Interface-R.
 The subject of the outline and the order of the interface was
 counter-balanced. We examined the time they spent editing,
 the number/type of functions they used, and the quality of the
-final recording (Table~\ref{}). After the session, participants gave written
+final recording. After the session, participants gave written
 qualitative feedback about the two interfaces. In total, each
 session lasted 1 hour.
    
 Each of the four participants preferred \systemname\ over Interface-R for the given task, and noted they would use
 our interface to edit audio recordings. Every participant also
 completed the task faster using our interface (7.4 $vs$ 9.9 min Interface-R). 
+Table 2 summarizes the participants' usage of our interface. Again users had different preferences for the individual transcript view and the \textit{all-tab} view. User B wrote,  \textit{``individual tabs were helpful after using the all-tab to make sure I hadn't missed content''} whereas user D \textit{``liked the individual tabs better since I wanted to view the original take as is.''} For this task, participants did not have to insert new content, but they used text editing operations to move content (e.g. copy \& paste)\ or delete portions of accepted segments from the final track.   
 
-\VTODO{Explain usage}
 
 All of the participants commented on how the master-script helped them in the task. One person noted that in \systemname\ \textit{``the master-script linked the two takes into one comprehensive view
 that made the editing a lot simpler, [while in Interface-R] I felt like I had to consider two separate documents and combine them manually.''} Another person preferred the \systemname\ interface for the task of editing the audio content, and commented that Interface-R would be useful to make detailed edits to the speech flow. 3 out of the 4 participants also found the color-coded visualization of the master-script (recorded vs. unrecorded) and the transcript (planned vs. improvised) very helpful. A participant wrote about the \textit{compare-view} feature that \textit{``The alignment was great. I felt like almost half of my work was
 already completed before I began.''} 
+
 
 
