@@ -9,7 +9,7 @@ We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim tr
 Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two texts for example, due to loose scripts, or inaccurate speech or transcription. We use the global alignment results to compute a co-segmentation of the two texts.
 
 In order to display corresponding parts in the master-script and the transcript side-by-side, we need to partition the texts into comparable segments. For example, text differencing and merging tools usually treat each line of text as a single segment.
-Ideally, our segments would respect natural boundaries such as sentence punctuations, line breaks and pauses in the audio. We would also like to separate parts of the transcript that agrees with the master-script (i.e. planned speech) from parts that do not (i.e. improvised speech).  
+Ideally, our segments would respect natural boundaries such as sentence punctuations, line breaks and pauses in the audio. We would also like to separate parts of the transcript that agree with the master-script (i.e. planned speech) from parts that do not (i.e. improvised speech).  
 We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
 
 \textbf{Iterative co-segmentation}
@@ -84,3 +84,5 @@ The final output of our algorithm is a segmentation of the two texts from the ma
 \VTODO{How to match these segments.}
 
 We use this output in the \textit{compare-view} to display matching segments side-by-side and to overwrite a segment of the  master-script when the user accepts a matching transcript segment.
+
+\VTODO{Are the segments used anywhere else? Given that this is the main technical piece of our approach, it seems like we should emphasize what aspects of our interface it enables. Doesn't the All tab also rely on this segmentation? }
