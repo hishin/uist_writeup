@@ -7,7 +7,11 @@ We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim tr
   
 \subsection{Aligning the transcript to the master-script}
 Once we have a verbatim transcript of an audio take, we compute the global word-to-word alignment between the transcript and the master script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which accounts for differences in the two texts for example, due to loose scripts, or inaccurate speech or transcription. We use the global alignment results to compute a co-segmentation of the two texts.
-
+\begin{figure}
+\centering
+  \includegraphics[width=1.0\columnwidth]{figures/multipletakes}
+  \caption{The \textit{all-tab} groups alternative takes of a segment and dispalys them in a drop-down list. Users can click on each to compare the audio, and select one to \textit{accept} to the final track.  }~\label{fig:multipletakes}
+\end{figure}
 In order to display corresponding parts in the master-script and the transcript side-by-side, we need to partition the texts into comparable segments. For example, text differencing and merging tools usually treat each line of text as a single segment.
 Ideally, our segments would respect natural boundaries such as sentence punctuations, line breaks and pauses in the audio. We would also like to separate parts of the transcript that agree with the master-script (i.e. planned speech) from parts that do not (i.e. improvised speech).  
 We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
