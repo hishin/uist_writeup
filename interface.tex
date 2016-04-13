@@ -1,8 +1,13 @@
 \section{Authoring Interface}
 \subsection{Key Features} Motivated by these insights, we developed the \systemname\  interface to support a dynamic workflow for script writing and  audio recording/editing. Our interface is built on two key features. 
 
+\begin{figure*}
+  \centering
+  \includegraphics[width=2.0\columnwidth]{figures/ui_aligned}
+  \caption{The \systemname\ interface. }~\label{fig:ui_aligned}
+\end{figure*}
 
-\textbf{Text-based representation of audio.} Previous work~\ref{} have shown that text-based representation of audio greatly facilitates navigation and editing. Moreover, since scripts are also composed in text, a text view of the audio  helps to link and unify the script
+\textbf{Text-based representation of audio.} Previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} have shown that text-based representation of audio greatly facilitates navigation and editing. Moreover, since scripts are also composed in text, a text view of the audio  helps to link and unify the script
 with the audio.
  Our system uses automatic speech recognition to transcribe the audio recordings in realtime, and represent each take with a\ verbatim transcript. The final track, composed from these takes, is also represented as text. Hence, the task of editing and combining the audio recordings becomes akin to merging text documents. 
 
@@ -13,11 +18,11 @@ with the audio.
 \subsection{Interface and Usage Scenario}
 The rest of the section describes the interface using an example scenario of how a user might create an audio recording from the beginning. 
 
-In Figure~\ref{masterscript}\VTODO{capture of interface with outline in master script}, the user begins by writing on the master-script an outline  of points to record. The text appears in light grey to indicate that these parts have not been recorded yet. At this stage, the master-script is like an ordinary
+Typically the user begins by writing on the master-script an outline  of points to record. The text appears in light grey to indicate that these parts have not been recorded yet. At this stage, the master-script is like an ordinary
 word document or script. 
 
 Once the user starts recording, the audio is transcribed in real time and a verbatim text corresponding to each take appears in a separate transcript document tab. Each transcript is time-aligned with the corresponding recording, so the user can quickly navigate to specific
-part of the audio by clicking on a word in the transcript. \VTODO{Explain track change view.} If the \textit{compare-view} is turned on, our system aligns segments of the transcript to corresponding segments in the master-script, (in this case the points in the original outline), and shows them side-by-side (Figure~\ref{compare-view})\VTODO{capture of aligned view}. A segment in the transcript that does not correspond to any part of the master-script (e.g. where the speaker improvised)is highlighted in yellow.
+part of the audio by clicking on a word in the transcript. If the \textit{diff-view} is on, the per-word difference between the transcript and the master-script text is displayed like \textit{track change markers} in word processing tools. That is, missing words are crossed out and extra words are highlighted. If the \textit{compare-view} is on, our system aligns segments of the transcript to corresponding segments in the master-script, (in this case the points in the original outline), and shows them side-by-side (Figure~\ref{fig:ui_aligned}). A segment in the transcript that does not correspond to any part of the master-script (e.g. where the speaker improvised)is highlighted in yellow.
 
 % partitions the transcript and the master script into short segments, and aligns them to each other. The boundaries of these segments are computed by taking into account, along with other factors,  pauses in the audio, such that when different audio segments corresponding to the transcript segments are joined together the cut is seamless.
 
