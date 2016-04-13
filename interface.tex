@@ -10,7 +10,7 @@
 
 \textbf{Text-based representation of audio.} Previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} have shown that text-based representation of audio greatly facilitates navigation and editing. Moreover, since scripts are also composed in text, a text view of the audio  helps to link and unify the script
 with the audio.
- Our system uses automatic speech recognition to transcribe the audio recordings in realtime, and represent each take with a\ verbatim transcript. The final track, composed from these takes, is also represented as text. Hence, the task of editing and combining the audio recordings becomes akin to merging text documents. 
+ Our system uses automatic speech recognition to transcribe the audio recordings in realtime, and represent each take with a\ verbatim transcript. The final track, composed from these takes, is also represented as text. Hence, we can address the task of editing and combining the audio recordings and syncing them with the script like a text differencing and merging problem. 
 
 \textbf{Master-script linking script and audio.} Unlike existing tools, our interface does not make a distinction between the script and the final audio track. Instead, our interface includes a \textit{master-script} document that represents both the script (i.e. what the user planned to record) and the transcript of the final track (i.e. what the user actually recorded). The master-script evolves throughout the authoring process, as the user records new takes and merge parts of it in, adds or deletes text to be recorded, or edits recorded text. 
 
@@ -40,7 +40,7 @@ During any point in the process, the user can edit the master-script like a text
 \begin{figure}
 \centering
   \includegraphics[width=1.0\columnwidth]{figures/diffview}
-  \caption{The \textit{diff-view} displays a per-word difference between the master-script and the audio transcript. }~\label{fig:diffview}
+  \caption{The \textit{diff-view} displays a per-word difference between the master-script and the audio transcript. \VTODO{disply transcript sentence bfr diff view, annotate markers.}}~\label{fig:diffview}
 \end{figure}
 
 % \VTODO{Instead of describing all the different text colors throughout the section, it might be a bit clearer to skip all descriptions of text colors above and add a paragraph here saying that we visualize the text in the master-script with different colors to help users understand the state of the document. Red mean unrecorded, dark is accepted, etc.}

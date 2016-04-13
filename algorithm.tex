@@ -85,8 +85,8 @@ where $\big|S\big|$ is the number of segments and is a regularization term.
 
 The final output of our algorithm is a segmentation of the two texts from the master-script and the transcript. 
 
-\VTODO{How to match these segments.}
+For each transcript segment, we find the best matching master-script segment by computing a segment match score. The match score between two text segments $T_1$ and $T_2$ is defined as the proportion of words in those segments that have a match between each other (from the NW output).
+The result is a alignment between master-script and transcript segments. 
 
-We use this output in the \textit{compare-view} to display matching segments side-by-side and to overwrite a segment of the  master-script when the user accepts a matching transcript segment.
+We use this alignment to facilitate editing and merging of script/audio by presenting tools similar to  common text differencing and merging tools. The \textit{compare-view} displays matching segments side-by-side. We can also indicate which portions of the master-script is missing from the transcript, and which parts of the transcript are improvised (parts that do not have matching segments). In the \textit{all-tab}, we segments from separate transcripts that match similar portions of the master-script so that users can quickly compare and select one of them. Similar to text or code merging, users can select a transcript segment to overwrite the matching master-script segment.
 
-\VTODO{Are the segments used anywhere else? Given that this is the main technical piece of our approach, it seems like we should emphasize what aspects of our interface it enables. Doesn't the All tab also rely on this segmentation? }
