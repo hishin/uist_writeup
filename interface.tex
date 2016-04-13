@@ -8,7 +8,7 @@
   \caption{The \systemname\ interface. }~\label{fig:ui_aligned}
 \end{figure*}
 
-\textbf{Text-based representation of audio.} Previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} have shown that text-based representation of audio greatly facilitates navigation and editing. Moreover, since scripts are also composed in text, a text view of the audio  helps to link and unify the script
+\textbf{Text-based representation of audio.} We build on previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} that have shown that text-based representation of audio greatly facilitates navigation and editing. Moreover, since scripts are also composed in text, a text view of the audio  helps to link and unify the script
 with the audio.
  Our system uses automatic speech recognition to transcribe the audio recordings in realtime, and represent each take with a\ verbatim transcript. The final track, composed from these takes, is also represented as text. Hence, we can address the task of editing and combining the audio recordings and syncing them with the script like a text differencing and merging problem. 
 
@@ -20,9 +20,9 @@ with the audio.
 The rest of this section describes our interface using an example scenario of how a user might create an audio recording. 
 
 Typically, the user begins by writing an outline of points to record in the master-script.
-The text appears in light grey to indicate that these parts have not been recorded yet (Figure~\ref{fig:ui_aligned}). At this stage, the master-script is like an ordinary word document or script. 
+The text appears in light grey to indicate that these parts have not been recorded yet (Figure~\ref{fig:ui_aligned} \textit{left}). At this stage, the master-script is like an ordinary word processing document or script. 
 
-Once the user starts recording, the audio is transcribed in real time and verbatim text corresponding to each take appears in a separate transcript document tab. Each transcript is time-aligned with the corresponding recording, so the user can quickly navigate to specific
+Once the user starts recording, the audio is transcribed in real time and verbatim text corresponding to each take appears in a separate transcript document tab (Figure~\ref{fig:ui_aligned} \textit{right}). Each transcript is time-aligned with the corresponding recording, so the user can quickly navigate to specific
 parts of the audio by clicking on a word in the transcript. To help the user see and compare discrepancies between the script and the recording, we offer two different views.
 Enabling \textit{diff-view} displays the per-word difference between the transcript and the master-script text using  \textit{track change markers} similar to those found in word processing tools (Figure~\ref{fig:diffview}). That is, missing words are crossed out and extra words are highlighted. Enabling \textit{compare-view} aligns segments of the transcript to corresponding segments in the master-script (in this case the points in the original outline) and shows them side-by-side . A segment in the transcript that does not correspond to any part of the master-script (e.g. where the speaker improvised) is highlighted in yellow.
 
