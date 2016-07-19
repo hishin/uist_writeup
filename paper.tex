@@ -37,6 +37,7 @@
 \usepackage{color}
 \usepackage{booktabs}
 \usepackage{textcomp}
+\usepackage{soul}
 
 
 % Some optional stuff you might like/need.
@@ -106,6 +107,7 @@
   hypertexnames=false
 }
 \newcommand\VTODO[1]{\textcolor{red}{#1}}
+\newcommand\VREV[1]{\hl{#1}}
 \newcommand{\systemname}[0]{\textit{Voice Script}}
 % create a shortcut to typeset table headings
 % \newcommand\tabhead[1]{\small\textbf{#1}}
@@ -135,8 +137,8 @@
 
 \begin{abstract}
 Speech
-recordings are an important part of modern media from podcasts to  audio books to e-lectures and voice-overs. Authoring these recordings involves a dynamic back and forth process between script writing/editing and audio recording/editing. Yet, most existing tools treat the script and the audio separately, which makes the back and forth workflow very tedious. We present \systemname, an interface to support a dynamic workflow for
-script writing and  audio recording/editing. Our system integrates the script with the audio such that as the user writes the script or records speech, edits to the script are translated to the audio and vice versa. demonstrate that our interface greatly facilitates the audio authoring process.  
+recordings are an important part of modern media from podcasts to  audio books to e-lectures and voice-overs. Authoring these recordings involves an iterative back and forth process between script writing/editing and audio recording/editing. Yet, most existing tools treat the script and the audio separately, which makes the back and forth workflow very tedious. We present \systemname, an interface to support a dynamic workflow for
+script writing and  audio recording/editing. Our system integrates the script with the audio such that as the user writes the script or records speech, edits to the script are translated to the audio and vice versa. We used our system in various scenarios to create  audio recordings. Informal user feedback demonstrates that our interface greatly facilitates the audio authoring process.  
 \end{abstract}
 
 \category{H.5.2.}{Information Interfaces and Presentation
@@ -147,7 +149,7 @@ script writing and  audio recording/editing. Our system integrates the script wi
 \input{keyideas}
 \input{interface}
 \input{algorithm}
-\input{results}
+%\input{results}
 \input{user_eval}
 \input{pilot}
 \input{conclusions}

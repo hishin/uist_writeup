@@ -1,14 +1,12 @@
-\section{Conclusion and future work}
-Audio recordings of speech are a prevalent form of communication
-in modern media. Authoring speech
-recordings involves a dynamic back and forth process between
-script writing/editing and audio recording/editing. Unfortunately most existing tools treat the script and the audio as completely separate entities, which makes the back and forth workflow between them very tedious. We have present \systemname,
-an authoring interface that facilitates dynamic workflows for
-script writing and  audio recording/editing. \systemname\ introduces the notion of a \emph{master-script} that integrates the script with the audio and unifies the script/audio editing task. Our system supports a wide range of workflows and facilitates novice users creating speech recordings. 
+\section{Limitations}
+\VREV{We rely on automatic speech recognition (ASR) to transcribe the audio recordings in real time. Despite recent improvements in ASR} \cite{hinton2012deep}, \VREV{its performance varies widely. Transcription errors can affect the user's performance negatively (e.g., in navigating the audio, or if the user has to spend time correcting the errors)} \cite{gaur2015effects}. \VREV{Currently, in \textit{Voice Script}, users can click on a word to listen to its corresponding audio and manually correct the transcription without affecting the audio. Better ways to fix or reduce ASR errors, for instance, taking advantage of the written script, is an interesting area for future work.} 
 
-Our interface focuses mainly on the content of the speech recordings and not on the details of audio quality. As one user mentioned in the feedback, we could integrate additional editing tools such as the ones in Rubin et al. \cite{rubin2013content} or \cite{rubin2015capture} to improve speech quality. 
-Speech recordings are often crafted to accompany visual footage, in which case visual content is also closely related to the script/audio.
-Future work could investigate how to integrate visuals in the workflow.
-Since the script and audio develop over the course of many iterations, some type of version control would be useful to keep track of the development. For example, users may want to go back to a previous version before the edits, or compare different versions. 
+\VREV{We have used \textit{Voice Script} to collaborate \textit{asynchronously} to create voice recordings. Additional features are required in order to support synchronous collaboration. For instance, some type of conflict resolution and version control to keep track of the development would be useful.}
+
+\VREV{Also, our interface focuses on the content of the speech recordings but does not consider editing details for audio quality. As one user mentioned in the feedback, we could integrate editing tools such as the ones in Rubin et al. }\cite{rubin2013content} or \cite{rubin2015capture} \VREV{to fine-ßtune audio quality. Speech recordings often accompany visual footage or other sound effects such as music that is also closely related to the script/audio. Future work could investigate how to integrate these contents in the workflow.}
+
+\section{Conclusion and future work}
+To create speech recordings, people iterate back and forth between script writing/editing and audio recording/editing.  \VREV{It is also common for several people to collaborate in the authoring workflow.} Unfortunately, most existing tools treat the script and the audio as completely separate entities, which makes the dynamic workflow between them very tedious. We presented \systemname, an authoring interface that facilitates integrated workflows for script writing and  audio recording/editing. \systemname\ introduces the notion of a \emph{master-script} that combines the script with the audio and unifies the script/audio editing task. Our system supports a wide range of workflows, \VREV{including asynchronous collaboration}, and facilitates novice users creating speech recordings. 
+
 
 

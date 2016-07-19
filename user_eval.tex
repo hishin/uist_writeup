@@ -1,50 +1,56 @@
 \section{Informal User Evaluation}
 
-\begin{table*}[ht]
-\center
-\tabcolsep5pt
-\begin{tabular}{c|cccccccc}
-\multicolumn{9}{c}{\textbf{Audio Authoring Session}}\\\hline
-{Subject}&{Takes} &{Total}&{Edited} & {Total} & {Accept}
-&{View}&{View}&{Text} \\
-{}&{recorded}&{length}&{length}&{cuts}&{segment}&{alternate}&{diff}&{edit} \\\hline
-\textit{What is a decibel? (U1)}&{5}&{1:37}&{0:51}& {5}&{5} &{-}&{-}&{3}\\
-\textit{How lasers work (U2)}  &{4}&{2:49}&{1:06}&{6}&{22}&{5}&{-}&{15}
-\\\hline
-\end{tabular} 
-\label{tab:recording}
-\caption{Two users (\textit{U1} and \textit{U2}) created audio recordings using our system and we collected their usage statistics. Total cuts refer to the number of places where audio segments from different takes were joined together. View alternate refers to the number of times users viewed alterantive takes of a segment in  \textit{all-tab} using a drop-down button.}
-\end{table*}
+% \begin{table*}[ht]
+% \center
+% \tabcolsep5pt
+% \begin{tabular}{c|cccccccc}
+% \multicolumn{9}{c}{\textbf{Audio Authoring Session}}\\\hline
+% {Subject}&{Takes} &{Total}&{Edited} & {Total} & {Accept}
+% &{View}&{View}&{Text} \\
+% {}&{recorded}&{length}&{length}&{cuts}&{segment}&{alternate}&{diff}&{edit} \\\hline
+% \textit{What is a decibel? (U1)}&{5}&{1:37}&{0:51}& {5}&{5} &{-}&{-}&{3}\\
+% \textit{How lasers work (U2)}  &{4}&{2:49}&{1:06}&{6}&{22}&{5}&{-}&{15}
+% \\\hline
+% \end{tabular} 
+% \label{tab:recording}
+% \caption{Two users (\textit{U1} and \textit{U2}) created audio recordings using our system and we collected their usage statistics. Total cuts refer to the number of places where audio segments from different takes were joined together. View alternate refers to the number of times users viewed alterantive takes of a segment in  \textit{all-tab} using a drop-down button.}
+%\end{table*}
 
-To gauge the utility of our interface, we conducted an informal evaluation with two users (U1 and U2). We started each session with a 10-minute demonstration of our interface. We gave them a short article about a technical subject and asked them to create an explanatory audio recording using our authoring interface. Users were allowed to go back to the article during the authoring process or to take notes on the master-script, but they were discouraged from recording the article by reading it out loud. We examined their workflow, and the number/type of features they used. We also solicited written qualitative feedback about the authoring experience at the end of the session. Each session lasted about 40 minutes.
+To assess the overall usability of \systemname\ and to observe how users leverage various features of the interface, we conducted an informal evaluation with 4 users (U1-4). We started each session with a 10-minute demonstration of our interface. Then, we gave users a short article about a technical subject: \textit{What
+is a Decibel?} from \textit{howstuffworks.com} \cite{howstuffworks} or \textit{How Lasers Work} from
+David Macaulay's illustrated book, \textit{The Way Things Work}
+\cite{macaulay1999way}. The users' task was to create an explanatory audio recording about the subject using our interface. Users were allowed to refer to the article during the authoring process or to take notes on the master-script, but they were discouraged from recording the article by reading it out loud. We examined the users' workflow and solicited written qualitative feedback about the authoring experience at the end of the session. Each session lasted about 40 minutes.
 
-U1 created a recording about the article \textit{What is a decibel? } from howstuffworks.com \cite{howstuffworks}, and U2 created a recording about \textit{How lasers work} from David Macaulay's illustrated book, \textit{The Way Things Work} \cite{macaulay1999way}. Overall, the results from the study were extremely encouraging. Both users successfully produced a complete audio recording summarizing the articles, taking advantage of many of our interface features (Table 1). 
+While the size of our user evaluation is small, the initial findings (below) are extremely encouraging. All users successfully produced a complete audio recording summarizing the article. %(Table 1). 
 
 
 
-Interestingly, each user adapted a very different workflow. U1 started by writing a complete outline as a list of main ideas. For each take, U1 recorded a few points in the outline, merged them into the master-script then continued to record the next point on a separate take. On the other hand, U2 wrote part of the outline, recorded that portion, and moved on to write the outline of the next part. U1 worked mostly with individual transcript
-tabs and did not use the \textit{all-tab} or view alternate takes. U2 took advantage of both individual transcripts as well as the \textit{all-tab}. Neither of them used the \textit{diff-view} for the task. The difference in the workflows could be due to personal preference, or  to the fact that U2's article was organized into a clear step-by-step explanation whereas U1's article flowed like a continuous narrative. In either case, our interface was able support both users' workflow. 
+\textbf{\systemname\ supports various workflows.} Interestingly, each user adapted a very different workflow. For example, U1 started by writing a complete list of main points. For each take, U1 recorded a few points from the list, merged them into the master-script, and then continued to record the next points on a separate take. In contrast, U2 wrote part of the script, recorded that portion, and moved on to write the script of the next part. U3 did not write an initial script, but improvised the recording and used that as a starting point to edit and re-record afterwards. Sometimes users typed verbatim script to read aloud during the recording, and other times they wrote rough outlines. For example, U2 noted,  \textit{``For
+the introduction, I had a pretty good idea of what I wanted to
+say, so it saved me time to use only bullet points. [For the
+second part] I wrote full sentences, as I was not familiar with
+all the technical details and it would have been more difficult
+to improvise. I enjoyed being able to use the master-script in
+both ways.''} The differences in the workflows could be due to personal preference, and/or  to the article content. In any case, our interface was able support various workflows. 
 
-Both users took advantage of the master-script to go back and forth between scripting and audio recording. After recording and merging in all the points
-to the final track, U1 noticed a mistake in one of the examples
-(instead of saying \textit{140 decibels}, U1 had said \textit{40}
+\textbf{The master-script facilitates iterative script editing and audio recording.} As the above example workflows also demonstrate, users took advantage of the master-script to go back and forth between scripting and audio recording. For instance, U2 initially wrote a very rough outline for the script.
+After recording and merging the first take based on this rough script, U2 refined the master-script, and then recorded more takes. Similarly, after recording and merging audio takes into the final track, U1 noticed a mistake in the speech
+(i.e., instead of saying \textit{140 decibels}, U1 had said \textit{40}
 decibels). U1 corrected the corresponding recorded text in the
-master-script, which was consequently marked red. U1 re-recorded
-and replaced this part by reading out the edited master-script.
-U2 wrote a very rough outline for the first part of the article. Then U2 used the transcript of the first take to refine the script, and recorded a second take. For the second part of the article, U2 wrote a much more detailed script beforehand. U2 noted,  \textit{``For the introduction, I had a pretty good idea of what I wanted to say, so it saved me time to use only bullet points. [For the second part] I wrote full sentences, as I was not familiar with all the technical details and it would have been more difficult
-to improvise. I enjoyed being able to use the master-script in both ways.''
-}
+master-script, re-recorded
+the relevant portion part by reading out the edited master-script, and replaced it.
+During the back-and-forth iteration, users took advantage of our color-coded visualization that indicated sections of the mater-script that required recording  (grey) or re-recording (blue italics). 
 
 
-Both users offered strong positive feedback about our authoring
-interface, and said they would use it for creating speech recordings. They were most enthusiastic about the integration
-of the script and the final track in the master-script view,
+\textbf{Users found the master-script useful, and were satisfied with the final voice-over quality.} All users offered strong positive feedback about our authoring
+interface, and said they would use it to create speech recordings. They were most enthusiastic about the integration
+of the script and the recordings in the master-script document,
 and the ability to align the master-script to the transcripts.
-U2 wrote, \textit{``Writing the outline on the same interface and having
-that integrated with the audio was most helpful.''}  U1 said
-that the alignment \textit{``helped to keep track of what pieces
+To quote from one user, \textit{``Writing the script on the same interface and having
+that integrated with the audio was most helpful.''}  Another user noted
+that the \textit{``compare-view helped to keep track of what pieces
 of information was already recorded and which ones were still
-needed.''} Participants were also impressed with the quality
-of the merged recording. U1 wrote, \textit{``I was surprised
-how the final recording from the multiple takes was seamless.''} U2 noted that while speech recognition was imperfect, \textit{the transcriptions were accurate enough to understand and easy to check [with the audio].''}
+needed.''} Participants were satisfied with the overall quality
+of the final recording. One user wrote, \textit{``I was surprised
+how the final recording from the multiple takes was seamless.''} Users noted that while speech recognition was imperfect, \textit{``the transcriptions were accurate enough to understand and easy to check [by clicking to listen to the corresponding audio].''}
 
