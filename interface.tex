@@ -5,10 +5,7 @@ Based on these observations, we developed \systemname, a speech authoring interf
 \begin{figure*}
   \centering
   \includegraphics[width=2.0\columnwidth]{figures/ui_aligned}
-  \caption{The \systemname\ interface. The master-script (left)  reflects the current state of
-the project, including unrecorded script and recorded final track. As the user records, speech is transcribed in real
-time and a verbatim text corresponding to each take appears in
-a separate transcript document (right).}~\label{fig:ui_aligned}
+  \caption{The \systemname\ interface. The \textit{master-script} view on the left shows the current state of the project, including both recorded and unrecorded text. On the right, there are individual tabs for each recording, along with an \textit{All} tab that shows transcribed text from all takes.}~\label{fig:ui_aligned}
 \end{figure*}
 
 \textbf{Text-based representation of audio.} We build on previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} that demonstrates the benefits of text-based representations of spoken audio for navigation and editing. \systemname\ uses automatic speech recognition (ASR) to transcribe audio recordings in realtime and represent each take with a verbatim transcript. As with previous systems, edits to these text transcripts are automatically propagated to the audio, which facilitates simple audio editing tasks. 
@@ -33,6 +30,7 @@ view more detailed discrepancies between the script and recording, the
 user can enable a \textit{diff-view} that displays per-word differences
 using standard track change markers (i.e., strikethroughs for
 missing words and highlighting for added words). 
+
 
 To add recorded audio to the final track, the user can \textit{accept} any portion of the recording by clicking a button next to the appropriate transcript segment. If there is a corresponding segment in the master-script, the accepted transcript segment replaces it. If there is no corresponding master-script segment, the accepted transcript segment is simply inserted into the master-script. Within the master-script, accepted segments appear in black to indicate that these are recorded portions of text that have been added to the final track. 
 
