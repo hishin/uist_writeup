@@ -7,11 +7,11 @@ We use IBM Speech to Text Service \cite{ibmspeechtotext} to obtain a verbatim tr
   
 \subsection{Aligning the transcript to the master-script}
 To support our side-by-side \textit{compare-view} as well as the \textit{All} tab view, we must identify corresponding parts of the master-script and recording transcripts. Moreover, we must partition these corresponding parts into segments that users can easily compare and merge into the master-script. Ideally, our segments should respect natural boundaries such as punctuations and line breaks in written text to aid readability. As discussed earlier, the segment boundaries should also align with longer pauses in the audio so that merge operations do not introduce obvious audio artifacts. Finally, we also want to separate parts of the transcript that generally agree with the master-script (i.e., planned speech) from parts that do not (i.e., improvised speech).  We designed a scoring function that optimizes for these requirements and use an iterative algorithm to co-segment the two texts. We first explain the algorithm and then describe the scoring function in detail.
-\begin{figure}
-\centering
-  \includegraphics[width=1.0\columnwidth]{figures/multipletakes}
-  \caption{The \textit{all-tab} groups alternative takes of a segment and dispalys them in a drop-down list. Users can click on each to compare the audio, and select one to \textit{accept} to the final track.  }~\label{fig:multipletakes}
-\end{figure}
+%\begin{figure}
+%\centering
+ % \includegraphics[width=1.0\columnwidth]{figures/multipletakes}
+  %\caption{The \textit{all-tab} groups alternative takes of a segment and dispalys them in a drop-down list. Users can click on each to compare the audio, and select one to \textit{accept} to the final track.  }~\label{fig:multipletakes}
+%\end{figure}
 
 \textbf{Iterative co-segmentation}
 Before running our co-segmentation algorithm, we first compute the global word-to-word alignment between each recording transcript and the master-script using the Needleman-Wunsch (NW) algorithm \cite{needleman1970general}. NW allows for insertions and deletions, which account for differences in the two texts, for example, due to rough scripts, inaccurate speech, or transcription errors.
@@ -34,6 +34,12 @@ to $E(S_j)$ to obtain the total score for the proposed
 segmentation. After considering all candidate boundaries $b_j$, the partial solution with the minimum segmentation score is taken. Once the algorithm iterates through all the words, $S_n$ is the
 optimal set of segments for the entire text. 
 
+\begin{figure}
+\centering
+  \includegraphics[width=1.0\columnwidth]{figures/scoringfunc.pdf}
+  \caption{Co-segmentation of master-script and transcript texts. (a) Segmentation using only punctuations results in abrupt cuts in the audio. (b) Segmentation using only utterance boundaries produces unnatural cuts in mid-sentence. Our scoring function takes into account both sentence punctuations and audio pauses.}~\label{fig:scoringfunc}
+\end{figure}
+
 \textbf{Scoring function}
 The dynamic programming algorithm described above requires a
 scoring function ($E$) that evaluates the goodness of candidate text segments. We define this scoring function
@@ -51,7 +57,7 @@ based on three terms:
 \end{equation}
 
 where $t_{gap}(w)$ is the silence gap in seconds after a recorded word, $w$, and is equal to 1.0 for $w$ that is at the end of a recording.
-\VREV{Note that it is important to consider both the sentence punctuations and the silent gaps. As the examples in} \VTODO{Figure~\ref{fig:scoring_example}} \VREV{illustrate, considering only puncutations can result in audio artifacts when merging recordings, and similarly, considering only utterance boundaries can produce unnatural cuts in the middle of a scripted sentence.}
+\VREV{Note that it is important to consider both the sentence punctuations and the silent gaps. As the examples in} \VTODO{Figure~\ref{fig:scoringfunc}} \VREV{illustrate, considering only puncutations can result in audio artifacts when merging recordings, and similarly, considering only utterance boundaries can produce unnatural cuts in the middle of a scripted sentence.}
 }
 
 \item{\textit{Global alignment}: We try to separate transcript segments that have a counterpart in the master-script from those that do not (planned vs. improvised), and vice versa (recorded vs. unrecorded). We utilize the global alignment output from the Needleman-Wunsch (NW) algorithm. For each word $w_i$ in one text ($T$) NW outputs a mapping ($M_{TT'}$) 

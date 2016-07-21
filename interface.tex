@@ -4,8 +4,8 @@ Based on these observations, we developed \systemname, a speech authoring interf
 
 \begin{figure*}
   \centering
-  \includegraphics[width=2.0\columnwidth]{figures/ui_aligned}
-  \caption{The \systemname\ interface. The \textit{master-script} view on the left shows the current state of the project, including both recorded and unrecorded text. On the right, there are individual tabs for each recording, along with an \textit{All} tab that shows transcribed text from all takes.}~\label{fig:ui_aligned}
+  \includegraphics[width=2.0\columnwidth]{figures/ui_aligned2}
+  \caption{The \systemname\ interface. The \textit{master-script} view on the left shows the current state of the project, including both recorded and unrecorded text. On the right, there are individual tabs for each recording, along with an \textit{All} tab that shows a summary of all takes.}~\label{fig:ui_aligned}
 \end{figure*}
 
 \textbf{Text-based representation of audio.} We build on previous work~\cite{casares2002simplifying,whittaker2004semantic,berthouzoz2012tools,rubin2013content} that demonstrates the benefits of text-based representations of spoken audio for navigation and editing. \systemname\ uses automatic speech recognition (ASR) to transcribe audio recordings in realtime and represent each take with a verbatim transcript. As with previous systems, edits to these text transcripts are automatically propagated to the audio, which facilitates simple audio editing tasks. 
@@ -36,7 +36,7 @@ To add recorded audio to the final track, the user can \textit{accept} any porti
 
 %\VTODO{Mention the ability to revert?}
 
-If the user records multiple takes, in addition to each of the transcript tabs, the \textit{all} tab provides a summary of all of the takes. For each segment in the master script, this tab displays all the corresponding transcript segments from all of the audio takes. A drop-down button next to a transcript segment  indicates that there are multiple versions (or takes)  of the  segment. Clicking on the button opens a list showing the alternative versions (Figure ~\ref{fig:multipletakes}). The user can listen to any of these takes and select one without having to search through individual takes. 
+If the user records multiple takes, in addition to each of the transcript tabs, the \textit{all} tab provides a summary of all of the takes. For each segment in the master script, this tab displays all the corresponding transcript segments from all of the audio takes. A drop-down button next to a transcript segment  indicates that there are multiple versions (or takes)  of the  segment. Clicking on the button opens a list showing the alternative versions (Figure ~\ref{fig:ui_aligned}-5). The user can listen to any of these takes and select one without having to search through individual takes. 
 When the \textit{all} tab is in focus, any part of the master-script that has not been recorded in any of the takes is highlighted in red. In this way, the user can tell at a glance what has already been recorded and what still needs to be recorded. All of the dark (i.e. recorded) text in the master-script represents the current state of the final audio track; all of the grey text has not been recorded or is recorded but the author has not yet accepted it into the final track. 
 
 During any point in the process, the user can edit the master-script
@@ -55,8 +55,8 @@ audio segments into the final track.
 
 \begin{figure}
 \centering
-  \includegraphics[width=1.0\columnwidth]{figures/diffview}
-  \caption{The \textit{diff-view} displays a per-word difference between the master-script and the audio transcript.}~\label{fig:diffview}
+  \includegraphics[width=1.0\columnwidth]{figures/diffview2.pdf}
+  \caption{In the \textit{diff-view}, users can view detailed, per-word discrepancies between the master-script and audio transcript.}~\label{fig:diffview}
 \end{figure}
 
 % \VTODO{Instead of describing all the different text colors throughout the section, it might be a bit clearer to skip all descriptions of text colors above and add a paragraph here saying that we visualize the text in the master-script with different colors to help users understand the state of the document. Red mean unrecorded, dark is accepted, etc.}
